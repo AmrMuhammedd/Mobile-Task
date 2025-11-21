@@ -11,11 +11,11 @@ interface ActivityDao {
     suspend fun insert(activity: ActivityEntity)
 
     @Query("SELECT * FROM activities")
-    fun getAll(): LiveData<List<ActivityEntity>>
+     fun getAll(): LiveData<List<ActivityEntity>>
 
     @Query("SELECT * FROM activities WHERE date = :selectedDate")
-    fun getByDate(selectedDate: String): LiveData<List<ActivityEntity>>
+     fun getByDate(selectedDate: String): LiveData<List<ActivityEntity>>
 
     @Query("SELECT SUM(duration) FROM activities WHERE date = :selectedDate")
-    fun getTotalDurationByDate(selectedDate: String): LiveData<Int>
+     fun getTotalDurationByDate(selectedDate: String): LiveData<Int>
 }
